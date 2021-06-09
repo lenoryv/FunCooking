@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 30
       },
     container: {
-        height: 369,
+        height: 309,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#FDA55C'

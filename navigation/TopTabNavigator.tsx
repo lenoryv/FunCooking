@@ -15,11 +15,20 @@
  import TabTwoScreen from '../screens/TabTwoScreen';
  import TabThreeScreen from '../screens/TabThreeScreen';
  import { TopTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
+ import AppLoading from 'expo-app-loading';
+ import { useFonts, NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
  
  const TopTab = createMaterialTopTabNavigator<TopTabParamList>();
 
  
  export default function TopTabNavigator(): JSX.Element {
+  let [fontsLoaded] = useFonts({
+    NunitoSans_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
  
    return (
      <TopTab.Navigator
@@ -34,9 +43,14 @@
         },
         labelStyle: {
           textAlign: 'center',
-          paddingTop: 24,
           textTransform: 'capitalize',
           width: 100,
+          fontFamily:'NunitoSans_600SemiBold',
+          fontSize:22,
+          color:'#212121',
+          marginBottom: 0,
+          marginTop: 0,
+          marginLeft:10
         },
         tabStyle: {
             width: 'auto',
@@ -44,7 +58,7 @@
         indicatorStyle: {
           borderBottomColor: '#212121',
           borderBottomWidth: 2,
-          borderRadius: 2
+          borderRadius: 2,
         },
       }}>
        <TopTab.Screen
@@ -76,10 +90,7 @@
        <TabOneStack.Screen
          name="TabOneScreen"
          component={TabOneScreen}
-         options={{
-          header: () => <Explora/>,
-        }}
-
+         options={{headerShown:false}}
        />
      </TabOneStack.Navigator>
    );
@@ -93,7 +104,7 @@
        <TabTwoStack.Screen
          name="TabTwoScreen"
          component={TabTwoScreen}
-         options={{ headerTitle: 'Tab Two Title' }}
+         options={{headerShown:false}}
        />
      </TabTwoStack.Navigator>
    );
@@ -107,7 +118,7 @@
         <TabThreeStack.Screen
           name="TabThreeScreen"
           component={TabThreeScreen}
-          options={{ headerTitle: 'Tab Two Title' }}
+          options={{headerShown:false}}
         />
       </TabThreeStack.Navigator>
     );
