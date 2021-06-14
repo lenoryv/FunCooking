@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet,TouchableOpacity, Alert, Image } from 'react-native';
+import { useNavigation,NavigationContainer } from '@react-navigation/native';
 import { color } from 'react-native-reanimated';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
@@ -11,6 +12,7 @@ import { NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
 import { Comfortaa_400Regular } from '@expo-google-fonts/comfortaa';
 
 export default function TabThreeScreen() {
+  const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     NunitoSans_600SemiBold,
@@ -32,7 +34,7 @@ export default function TabThreeScreen() {
         source={require('../assets/images/lupa.png')} />
         <Image style={styles.img}
           source={require('../assets/images/card3.png')} />
-        <TouchableOpacity style={styles.button}><Text style={styles.textButton}>COMBINAR</Text></TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Colection')} style={styles.button}><Text style={styles.textButton}>COLECCIÓN</Text></TouchableOpacity>
     </View>
   );
 }
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
   img: {
     width: 172,
     height:172,
-    marginTop: 60,
+    marginTop: 100,
     marginBottom: 60
   },
   icon: {
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
     height: 44,
     left: '71.73%',
     right: '12.27%',
-    top: '45.67%',
+    top: '50.67%',
     bottom: '58.55%',
   }
 });

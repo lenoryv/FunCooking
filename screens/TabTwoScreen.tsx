@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   img: {
     width: 172,
     height:172,
-    marginTop: 60,
+    marginTop: 100,
     marginBottom: 60
   },
   icon: {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     height: 46,
     left: '71.73%',
     right: '12.27%',
-    top: '45.67%',
+    top: '50.67%',
     bottom: '58.55%',
   }
 });

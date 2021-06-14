@@ -5,6 +5,7 @@
 
 export type RootStackParamList = {
   Root: undefined;
+  Colection: undefined;
   NotFound: undefined;
 };
 
@@ -29,4 +30,11 @@ export type TabTwoParamList = {
 
 export type TabThreeParamList = {
   TabThreeScreen: undefined;
+};
+
+export type ButtonParamList = {
+  Colection: undefined;
+};
+export type OneScreenParamList = {
+  ColectionScreen: undefined;
 };

@@ -7,14 +7,12 @@
  import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
  import { createStackNavigator } from '@react-navigation/stack';
  import * as React from 'react';
+ import { View } from 'react-native';
  
- import Colors from '../constants/Colors';
- import useColorScheme from '../hooks/useColorScheme';
- import Explora from '../headers/HeaderOne';
  import TabOneScreen from '../screens/TabOneScreen';
  import TabTwoScreen from '../screens/TabTwoScreen';
  import TabThreeScreen from '../screens/TabThreeScreen';
- import { TopTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList } from '../types';
+ import { TopTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList,OneScreenParamList, ButtonParamList } from '../types';
  import AppLoading from 'expo-app-loading';
  import { useFonts, NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
  
@@ -37,20 +35,19 @@
         scrollEnabled: true,
         showLabel :true,
         style: {
-          backgroundColor: 'white',
+          width: '100%',
           elevation: 0,
           opacity: 1,
         },
         labelStyle: {
           textAlign: 'center',
           textTransform: 'capitalize',
-          width: 100,
+          width: 110,
           fontFamily:'NunitoSans_600SemiBold',
           fontSize:22,
           color:'#212121',
           marginBottom: 0,
           marginTop: 0,
-          marginLeft:10
         },
         tabStyle: {
             width: 'auto',
@@ -76,12 +73,13 @@
        />
      </TopTab.Navigator>
    );
+   
  }
- 
 
  
  // Each tab has its own navigation stack, you can read more about this pattern here:
  // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
+
  const TabOneStack = createStackNavigator<TabOneParamList>();
  
  function TabOneNavigator() {
@@ -123,4 +121,14 @@
       </TabThreeStack.Navigator>
     );
  }
+
+ function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    </View>
+  );
+}
+
+
+
  

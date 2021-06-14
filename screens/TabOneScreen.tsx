@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { StyleSheet,TouchableOpacity, Alert, Image } from 'react-native';
-import { color } from 'react-native-reanimated';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { StyleSheet,TouchableOpacity, Image } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
+import { createStackNavigator } from '@react-navigation/stack';
+import { RootStackParamList } from '../types';
+
+import { useNavigation,NavigationContainer } from '@react-navigation/native';
+import colors from '../components/Colors';
 import { Text, View} from '../components/Themed';
 import AppLoading from 'expo-app-loading';
 import { useFonts,Montserrat_400Regular, Montserrat_500Medium } from '@expo-google-fonts/montserrat';
 import { NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
 import { Comfortaa_400Regular } from '@expo-google-fonts/comfortaa';
 
+
 export default function TabOneScreen() {
+
+
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     NunitoSans_600SemiBold,
@@ -22,7 +27,7 @@ export default function TabOneScreen() {
     return <AppLoading />;
   }
   return (
-    <View style={styles.container}>
+      <View style={styles.container}>
         <View style={styles.header}>
         <Text style={styles.title}>¿Deseas preparar algo?</Text>
         <Text style={styles.subtitle}>Vamos a jugar</Text>
@@ -30,17 +35,28 @@ export default function TabOneScreen() {
         </View>
         <Image style={styles.icon}
         source={require('../assets/images/iconcombinar.png')} />
-        <Image style={styles.img}
+        <Image 
+        fadeDuration={1000}
+        style={styles.img}
           source={require('../assets/images/card.png')} />
-        <TouchableOpacity style={styles.button}><Text style={styles.textButton}>COMBINAR</Text></TouchableOpacity>
-    </View>
+        <TouchableOpacity onPress={() => handleHelpPress()}
+        style={styles.button}>
+          <Text style={styles.textButton}>COMBINAR</Text></TouchableOpacity>
+      </View>
+  );
+}
+const Stack = createStackNavigator<RootStackParamList>();
+
+function handleHelpPress() {
+  return (
+    <View></View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: '#FDA55C',
+    backgroundColor: colors.backGround1,
     alignItems: 'center'
   },
   header: {
@@ -85,7 +101,7 @@ const styles = StyleSheet.create({
   img: {
     width: 172,
     height:172,
-    marginTop: 60,
+    marginTop: 100,
     marginBottom: 60
   },
   icon: {
@@ -94,7 +110,7 @@ const styles = StyleSheet.create({
     height: 40,
     left: '71.73%',
     right: '12.27%',
-    top: '45.67%',
+    top: '50.67%',
     bottom: '58.55%',
   }
 });

@@ -10,11 +10,14 @@ import { ColorSchemeName } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+import ButtonNavigator from './ButtonNavigator';
 import FunCooking from '../headers/HeaderFunCooking';
 import Exp from '../headers/HeaderTwo';
 import TopTabNavigator from './TopTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import { Actions, Router, Scene } from "react-native-router-flux";
+import ColectionScreen from '../screens/ColectionScreen';
+
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -36,6 +39,7 @@ function RootNavigator() {
       <Stack.Screen options={{header: ()=> <FunCooking/>}}
           name="Root" component={TopTabNavigator} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="Colection" component={ColectionScreen} options={{headerShown:false}} />
     </Stack.Navigator>
   );
 }
