@@ -3,10 +3,10 @@ import colors from '../components/Colors';
 import AppLoading from 'expo-app-loading';
 import { useFonts,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
 import { FlatList, StyleSheet, Text, View,TouchableOpacity, Image, requireNativeComponent } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
 
 const CardProduct = () => {
-
+  const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
   });
@@ -16,7 +16,7 @@ const CardProduct = () => {
   }
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={() => navigation.navigate('Product')}style={styles.container}>
       <FlatList
         data={[{
           key: 'Fresas',

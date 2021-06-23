@@ -6,6 +6,7 @@
 export type RootStackParamList = {
   Root: undefined;
   Colection: undefined;
+  Product: undefined;
   NotFound: undefined;
 };
 

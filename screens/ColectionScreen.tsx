@@ -4,17 +4,17 @@ import AppLoading from 'expo-app-loading';
 
 import colors from '../components/Colors';
 
-import { StyleSheet, Text, TouchableOpacity, View, Image,StatusBar } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image,} from 'react-native';
 import { useFonts,Comfortaa_400Regular} from '@expo-google-fonts/comfortaa';
 import { NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
 
 import { RootStackParamList } from '../types';
 
-import { color } from 'react-native-reanimated';
 import CardProduct from '../components/CardProduct'
 import CardRecipe from '../components/CardRecipe'
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+
 
 
 export default function ColectionScreen({
