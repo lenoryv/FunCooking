@@ -1,31 +1,42 @@
 import * as React from 'react';
 import { Ionicons } from '@expo/vector-icons';
+import { useCallback } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
   TouchableOpacity,
-  Alert
+  Alert,
+  TouchableHighlight 
 } from 'react-native';
 import AppLoading from 'expo-app-loading';
+import { useNavigation,NavigationContainer,DrawerActions } from '@react-navigation/native';
+
 import { useFonts,Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 
-
 const FunCooking = () => {
+  const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
   });
 
+  const openDrawer = useCallback(() => {
+    navigation.dispatch(DrawerActions.openDrawer());
+  },[]);
+  
+
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+
+
   return (
     <View style={styles.container}>
         <View style={styles.header}>
         <Text style={styles.title}>FUNCOOKING</Text>
         <TouchableOpacity style={styles.button}
-        onPress={() => { Alert.alert('En Desarollo :)') }}>
+        onPress={openDrawer}>
           <Image style={styles.icon}
           source={require('../assets/images/burger.png')} /></TouchableOpacity>
         </View>
@@ -49,7 +60,7 @@ const styles = StyleSheet.create({
     title:{
       fontFamily:'Montserrat_400Regular',
       color:'#003049',
-      fontSize: 10,
+      fontSize: 12,
       paddingBottom: 8
     },
     button: {

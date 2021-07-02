@@ -8,6 +8,8 @@
  import { createStackNavigator } from '@react-navigation/stack';
  import * as React from 'react';
  import { View } from 'react-native';
+
+ import FunCooking from '../headers/HeaderFunCooking';
  
  import TabOneScreen from '../screens/TabOneScreen';
  import TabTwoScreen from '../screens/TabTwoScreen';
@@ -61,6 +63,7 @@
        <TopTab.Screen
          name="Combinar"
          component={TabOneNavigator}
+         
 
        />
        <TopTab.Screen
@@ -122,12 +125,6 @@
     );
  }
 
- function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    </View>
-  );
-}
 
 
 

@@ -14,6 +14,8 @@ import FunCooking from '../headers/HeaderFunCooking';
 import TopTabNavigator from './TopTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import ColectionScreen from '../screens/ColectionScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import DrawerNavigator from './DrawerNavigator';
 import ProductScreen from '../screens/ProductScreen';
 
 
@@ -31,14 +33,16 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 // Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
+
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen options={{header: ()=> <FunCooking/>}}
-          name="Root" component={TopTabNavigator} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Screen name="Colection" component={ColectionScreen} options={{headerShown:false}} />
       <Stack.Screen name="Product" component={ProductScreen} options={{headerShown:false}} />
+      <Stack.Screen options={{headerShown:false}}
+      name="Root" component={DrawerNavigator}/>
     </Stack.Navigator>
   );
 }
+
