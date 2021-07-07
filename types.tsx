@@ -7,6 +7,7 @@ export type RootStackParamList = {
   Root: undefined;
   Colection: undefined;
   Product: undefined;
+  Recipe: undefined;
   NotFound: undefined;
   Hamburger: undefined;
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import colors from '../components/Colors';
 import AppLoading from 'expo-app-loading';
 import { useFonts,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
-import { FlatList, StyleSheet, Text, View,TouchableOpacity, Image, requireNativeComponent } from 'react-native';
+import { FlatList, StyleSheet, Text, View,TouchableOpacity, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const CardProduct = () => {
@@ -19,9 +19,9 @@ const CardProduct = () => {
     <TouchableOpacity onPress={() => navigation.navigate('Product')}style={styles.container}>
       <FlatList
         data={[{
-          key: 'Fresas',
-          cal: '25 kcal',
-          img: require('../assets/images/fresas.png')
+          key: 'Robalo',
+          cal: '98 kcal',
+          img: require('../assets/images/lubina.png')
         },
         ]}
         renderItem={({item}) => 
