@@ -1,17 +1,14 @@
 import * as React from 'react';
-import { Ionicons } from '@expo/vector-icons';
 import { useCallback } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
-  TouchableOpacity,
-  Alert,
-  TouchableHighlight 
+  TouchableOpacity
 } from 'react-native';
 import AppLoading from 'expo-app-loading';
-import { useNavigation,NavigationContainer,DrawerActions } from '@react-navigation/native';
+import { useNavigation,DrawerActions } from '@react-navigation/native';
 
 import { useFonts,Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 

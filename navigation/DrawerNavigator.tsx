@@ -5,7 +5,7 @@ import * as React from 'react';
 import FunCooking from '../headers/HeaderFunCooking';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
-import { DrawerParamList, DatabaseParamList, FileSystemParamList, ClientsParamList } from '../types';
+import { DrawerParamList, HomeParamList, CreditsParamList, ExitParamList } from '../types';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
@@ -13,56 +13,56 @@ export default function DrawerNavigator() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen
-        name="Database"
-        component={DatabaseNavigator}/>
+        name="Home"
+        component={HomeNavigator}/>
       <Drawer.Screen
-        name="FileSystem"
-        component={FileSystemNavigator}
+        name="Credits"
+        component={CreditsNavigator}
       />
       <Drawer.Screen
-        name="Clients"
+        name="Exit"
         component={ClientsNavigator}
       />
     </Drawer.Navigator>
   );
 }
 
-const DatabaseStack = createStackNavigator<DatabaseParamList>();
+const HomeStack = createStackNavigator<HomeParamList>();
 
-function DatabaseNavigator() {
+function HomeNavigator() {
   return (
-    <DatabaseStack.Navigator>
-      <DatabaseStack.Screen
-        name="DatabaseScreen"
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="HomeScreen"
         component={TopTabNavigator}
         options={{header: ()=> <FunCooking/>}}
       />
-    </DatabaseStack.Navigator>
+    </HomeStack.Navigator>
   )
 }
 
-const FileSystemStack = createStackNavigator<FileSystemParamList>();
+const CreditsStack = createStackNavigator<CreditsParamList>();
 
-function FileSystemNavigator() {
+function CreditsNavigator() {
   return (
-    <FileSystemStack.Navigator>
-      <FileSystemStack.Screen
-        name="FileSystemScreen"
+    <CreditsStack.Navigator>
+      <CreditsStack.Screen
+        name="CreditsScreen"
         component={NotFoundScreen}
       />
-    </FileSystemStack.Navigator>
+    </CreditsStack.Navigator>
   )
 }
 
-const ClientsStack = createStackNavigator<ClientsParamList>();
+const ExitStack = createStackNavigator<ExitParamList>();
 
 function ClientsNavigator() {
   return (
-    <ClientsStack.Navigator>
-      <ClientsStack.Screen
-        name="ClientsScreen"
+    <ExitStack.Navigator>
+      <ExitStack.Screen
+        name="LoginScreen"
         component={NotFoundScreen}
       />
-    </ClientsStack.Navigator>
+    </ExitStack.Navigator>
   )
 }

@@ -4,7 +4,6 @@ import { StyleSheet,TouchableOpacity, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { RootStackParamList } from '../types';
 
-import { useNavigation,NavigationContainer } from '@react-navigation/native';
 import colors from '../components/Colors';
 import { Text, View} from '../components/Themed';
 import AppLoading from 'expo-app-loading';

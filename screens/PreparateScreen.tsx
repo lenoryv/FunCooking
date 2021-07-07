@@ -10,7 +10,6 @@ import { NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
 import { Montserrat_400Regular} from '@expo-google-fonts/montserrat';
 
 import { RootStackParamList } from '../types';
-import { color } from 'react-native-reanimated';
 
 export default function PreparatetScreen({
   navigation,

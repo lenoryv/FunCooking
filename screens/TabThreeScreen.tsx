@@ -1,10 +1,6 @@
 import * as React from 'react';
-import { StyleSheet,TouchableOpacity, Alert, Image } from 'react-native';
-import { useNavigation,NavigationContainer } from '@react-navigation/native';
-import { color } from 'react-native-reanimated';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-
-import EditScreenInfo from '../components/EditScreenInfo';
+import { StyleSheet,TouchableOpacity, Image } from 'react-native';
+import { useNavigation} from '@react-navigation/native';
 import { Text, View} from '../components/Themed';
 import AppLoading from 'expo-app-loading';
 import { useFonts,Montserrat_400Regular, Montserrat_500Medium } from '@expo-google-fonts/montserrat';

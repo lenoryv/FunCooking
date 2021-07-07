@@ -109,13 +109,5 @@ const styles = StyleSheet.create({
   scroll:{
     flex: 1,
     marginTop: 20,
-  },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
-  linkText: {
-    fontSize: 14,
-    color: '#2e78b7',
-  },
+  }
 });

@@ -20,8 +20,8 @@ const Explora = () => {
 
 const styles = StyleSheet.create({
     header: {
-        width: '100%',
-        height: '100%',
+        width: 50,
+        height: 50,
         alignItems:'center',
         justifyContent:'center',
         backgroundColor: 'white',
@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 30
       },
     container: {
-        height: 309,
+        height: 50,
+        width: 50,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#FDA55C'

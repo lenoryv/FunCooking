@@ -45,21 +45,21 @@ export type OneScreenParamList = {
 };
 
 export type DrawerParamList = {
-  Database: undefined;
-  FileSystem: undefined;
-  Clients: undefined;  
+  Home: undefined;
+  Credits: undefined;
+  Exit: undefined;  
 };
 
-export type DatabaseParamList = {
-  DatabaseScreen: undefined;
+export type HomeParamList = {
+  HomeScreen: undefined;
 };
 
-export type FileSystemParamList = {
-  FileSystemScreen: undefined;
+export type CreditsParamList = {
+  CreditsScreen: undefined;
 };
 
-export type ClientsParamList = {
-  ClientsScreen: undefined;
+export type ExitParamList = {
+  LoginScreen: undefined;
 };
 
 export type onPressFunc = (event: GestureResponderEvent) => void;

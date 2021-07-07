@@ -48,10 +48,8 @@ export default function RecipeScreen({
         <TouchableOpacity style={styles.buttonHeart}>
          <Image style={styles.iconHeart}
           source={require('../assets/images/buttonHeart.png')} />
-        </TouchableOpacity>
-        
+        </TouchableOpacity>     
             </View>
-
                 <ScrollView style={styles.safeArea}>
                 <Text style={styles.h5}>Receta de Robalo</Text>
                 <Text style={styles.subtitle}>Nombre Completo</Text>

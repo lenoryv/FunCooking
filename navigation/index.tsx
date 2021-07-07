@@ -17,6 +17,7 @@ import ProductScreen from '../screens/ProductScreen';
 import RecipeScreen from '../screens/RecipeScreen';
 import InfoProductScreen from '../screens/InfoProductScreen';
 import PreparateScreen from '../screens/PreparateScreen';
+import Explora from '../headers/HeaderOne';
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
