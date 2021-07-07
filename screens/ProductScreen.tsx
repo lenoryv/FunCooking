@@ -46,7 +46,7 @@ export default function ProductScreen({
         <View style={styles.containerList}>
             <View style={styles.lineStyle}></View>
              <View style={styles.containerButton}>
-             <TouchableOpacity onPress={() => navigation.replace('NotFound')} style={styles.buttonCard}>
+             <TouchableOpacity onPress={() => navigation.replace('InfoProduct')} style={styles.buttonCard}>
          <Image style={styles.icon}
           source={require('../assets/images/add.png')} />
         </TouchableOpacity>
