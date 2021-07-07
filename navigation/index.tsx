@@ -16,6 +16,7 @@ import DrawerNavigator from './DrawerNavigator';
 import ProductScreen from '../screens/ProductScreen';
 import RecipeScreen from '../screens/RecipeScreen';
 import InfoProductScreen from '../screens/InfoProductScreen';
+import PreparateScreen from '../screens/PreparateScreen';
 
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -41,6 +42,7 @@ function RootNavigator() {
       <Stack.Screen name="Product" component={ProductScreen} options={{headerShown:false}} />
       <Stack.Screen name="Recipe" component={RecipeScreen} options={{headerShown:false}} />
       <Stack.Screen name="InfoProduct" component={InfoProductScreen} options={{headerShown:false}} />
+      <Stack.Screen name="Preparate" component={PreparateScreen} options={{headerShown:false}} />
       <Stack.Screen options={{headerShown:false}}
       name="Root" component={DrawerNavigator}/>
     </Stack.Navigator>

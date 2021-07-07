@@ -45,7 +45,7 @@ export default function RecipeScreen({
         <View style={styles.containerList}>
             <View style={styles.lineStyle}></View>
              <View style={styles.containerButton}>
-        <TouchableOpacity onPress={() => navigation.replace('NotFound')} style={styles.buttonHeart}>
+        <TouchableOpacity style={styles.buttonHeart}>
          <Image style={styles.iconHeart}
           source={require('../assets/images/buttonHeart.png')} />
         </TouchableOpacity>
@@ -82,7 +82,7 @@ export default function RecipeScreen({
                 </View>
                 </View>
                 </ScrollView>
-                <TouchableOpacity style={styles.buttonCombinar}>
+                <TouchableOpacity onPress={() => navigation.replace('Preparate')} style={styles.buttonCombinar}>
                 <Text style={styles.buttonText}>Preparar</Text>
                 </TouchableOpacity>
       </View>
@@ -149,15 +149,6 @@ const styles = StyleSheet.create({
     marginTop: 16,
     fontSize: 17,
     fontFamily:'NunitoSans_400Regular'
-  },
-  overline: {
-    fontSize: 10,
-    fontFamily:'Montserrat_400Regular',
-    textTransform: 'uppercase'
-  },
-  caption: {
-    fontSize: 12,
-    fontFamily:'Montserrat_400Regular',
   },
   body: {
     fontSize: 16,

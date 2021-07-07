@@ -50,7 +50,7 @@ export default function ProductScreen({
          <Image style={styles.icon}
           source={require('../assets/images/add.png')} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.replace('NotFound')} style={styles.buttonHeart}>
+        <TouchableOpacity style={styles.buttonHeart}>
          <Image style={styles.iconHeart}
           source={require('../assets/images/buttonHeart.png')} />
         </TouchableOpacity>
