@@ -4,16 +4,13 @@ import AppLoading from 'expo-app-loading';
 
 import colors from '../components/Colors';
 
-import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollViewComponent,ScrollView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView} from 'react-native';
 import { useFonts,Comfortaa_400Regular} from '@expo-google-fonts/comfortaa';
 import { NunitoSans_400Regular} from '@expo-google-fonts/nunito-sans';
 import { Montserrat_400Regular, Montserrat_500Medium} from '@expo-google-fonts/montserrat';
 
 
 import { RootStackParamList } from '../types';
-
-import { SafeAreaView } from 'react-native-safe-area-context';
-
 
 export default function ProductScreen({
   navigation,
@@ -38,11 +35,11 @@ export default function ProductScreen({
          <Image style={styles.icon}
           source={require('../assets/images/back.png')} />
         </TouchableOpacity>
-        <Text style={styles.title}>Lubina</Text>
+        <Text style={styles.title}>Robalo</Text>
         </View>
         <View>
         <Image style={styles.img}
-        source={require('../assets/images/fresas.png')} />
+        source={require('../assets/images/lubina.png')} />
         </View>
       </View>
     <View style={styles.containerWhite}>
@@ -51,11 +48,11 @@ export default function ProductScreen({
              <View style={styles.containerButton}>
              <TouchableOpacity onPress={() => navigation.replace('NotFound')} style={styles.buttonCard}>
          <Image style={styles.icon}
-          source={require('../assets/images/back.png')} />
+          source={require('../assets/images/add.png')} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.replace('NotFound')} style={styles.buttonCard}>
-         <Image style={styles.icon}
-          source={require('../assets/images/back.png')} />
+        <TouchableOpacity onPress={() => navigation.replace('NotFound')} style={styles.buttonHeart}>
+         <Image style={styles.iconHeart}
+          source={require('../assets/images/buttonHeart.png')} />
         </TouchableOpacity>
         
             </View>
@@ -70,19 +67,19 @@ export default function ProductScreen({
                 <View style={styles.containerValues}>
                     <View style={styles.value}>
                     <Text style={styles.overline}>Calorias</Text>
-                    <Text style={styles.caption}>24 Kcal</Text>
+                    <Text style={styles.caption}>98 Kcal</Text>
                     </View>
                     <View style={styles.value}>
-                    <Text style={styles.overline}>Calorias</Text>
-                    <Text style={styles.caption}>24 Kcal</Text>
+                    <Text style={styles.overline}>Glúcido</Text>
+                    <Text style={styles.caption}>0 %</Text>
                     </View>
                     <View style={styles.value}>
-                    <Text style={styles.overline}>Calorias</Text>
-                    <Text style={styles.caption}>24 Kcal</Text>
+                    <Text style={styles.overline}>Proteínas</Text>
+                    <Text style={styles.caption}>19.3 g</Text>
                     </View>
                     <View style={styles.value}>
-                    <Text style={styles.overline}>Calorias</Text>
-                    <Text style={styles.caption}>24 Kcal</Text>
+                    <Text style={styles.overline}>Lípidoss</Text>
+                    <Text style={styles.caption}>2.3 g</Text>
                     </View>
                 </View>
                 <Text style={styles.subtitle}>Grupo Alimentario</Text>
@@ -222,6 +219,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: colors.secundary
   },
+  buttonHeart: {
+    width: 40,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 16,
+    borderRadius: 20,
+  },
   containerButton:{
     flexDirection: 'row',
     width: '100%',
@@ -238,8 +243,12 @@ const styles = StyleSheet.create({
     borderRadius: 6
   },
   icon: {
-    width: 14,
+    width: 24,
     height: 24,
+  },
+  iconHeart: {
+    width: 24,
+    height: 23,
   },
   img: {
     width: 240,
