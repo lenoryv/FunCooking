@@ -2,27 +2,21 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import TopTabNavigator from './TopTabNavigator';
 import * as React from 'react';
-import FunCooking from '../headers/HeaderFunCooking';
 
-import NotFoundScreen from '../screens/NotFoundScreen';
-import { DrawerParamList, HomeParamList, CreditsParamList, ExitParamList } from '../types';
+import { FunCooking } from '../headers/HeaderFunCooking';
+
+import { DrawerContent } from '../screens/DrawerContent';
+
+import { DrawerParamList, HomeParamList,} from '../types';
 
 const Drawer = createDrawerNavigator<DrawerParamList>();
 
 export default function DrawerNavigator() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator drawerContent={props => <DrawerContent {...props}/>}>
       <Drawer.Screen
         name="Home"
         component={HomeNavigator}/>
-      <Drawer.Screen
-        name="Credits"
-        component={CreditsNavigator}
-      />
-      <Drawer.Screen
-        name="Exit"
-        component={ClientsNavigator}
-      />
     </Drawer.Navigator>
   );
 }
@@ -38,31 +32,5 @@ function HomeNavigator() {
         options={{header: ()=> <FunCooking/>}}
       />
     </HomeStack.Navigator>
-  )
-}
-
-const CreditsStack = createStackNavigator<CreditsParamList>();
-
-function CreditsNavigator() {
-  return (
-    <CreditsStack.Navigator>
-      <CreditsStack.Screen
-        name="CreditsScreen"
-        component={NotFoundScreen}
-      />
-    </CreditsStack.Navigator>
-  )
-}
-
-const ExitStack = createStackNavigator<ExitParamList>();
-
-function ClientsNavigator() {
-  return (
-    <ExitStack.Navigator>
-      <ExitStack.Screen
-        name="LoginScreen"
-        component={NotFoundScreen}
-      />
-    </ExitStack.Navigator>
   )
 }
