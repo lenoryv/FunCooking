@@ -7,9 +7,7 @@
  import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
  import { createStackNavigator } from '@react-navigation/stack';
  import * as React from 'react';
- import { View } from 'react-native';
 
- import FunCooking from '../headers/HeaderFunCooking';
  
  import TabOneScreen from '../screens/TabOneScreen';
  import TabTwoScreen from '../screens/TabTwoScreen';
