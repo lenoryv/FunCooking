@@ -14,11 +14,6 @@ export type RootStackParamList = {
   Hamburger: undefined;
 };
 
-export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
-};
-
 export type TopTabParamList = {
   Combinar: undefined;
   Favoritas: undefined;
