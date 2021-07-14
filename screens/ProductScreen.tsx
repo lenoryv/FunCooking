@@ -10,6 +10,7 @@ import { NunitoSans_400Regular} from '@expo-google-fonts/nunito-sans';
 import { Montserrat_400Regular, Montserrat_500Medium} from '@expo-google-fonts/montserrat';
 
 
+
 import { RootStackParamList } from '../types';
 
 export default function ProductScreen({
@@ -48,10 +49,10 @@ export default function ProductScreen({
              <View style={styles.containerButton}>
              <TouchableOpacity onPress={() => navigation.replace('InfoProduct')} style={styles.buttonCard}>
          <Image style={styles.icon}
-          source={require('../assets/images/add.png')} />
+          source={require('../assets/images/addCircle.png')} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonHeart}>
-         <Image style={styles.iconHeart}
+        <TouchableOpacity style={styles.buttonCard}>
+         <Image style={styles.icon}
           source={require('../assets/images/buttonHeart.png')} />
         </TouchableOpacity>
         
@@ -214,16 +215,6 @@ const styles = StyleSheet.create({
     height: 40,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20,
-    marginLeft: 16,
-    borderWidth: 2,
-    borderColor: colors.secundary
-  },
-  buttonHeart: {
-    width: 40,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
     marginLeft: 16,
     borderRadius: 20,
   },
@@ -245,10 +236,6 @@ const styles = StyleSheet.create({
   icon: {
     width: 24,
     height: 24,
-  },
-  iconHeart: {
-    width: 24,
-    height: 23,
   },
   img: {
     width: 240,

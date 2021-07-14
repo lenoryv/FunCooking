@@ -12,7 +12,7 @@ import { useNavigation,DrawerActions } from '@react-navigation/native';
 
 import { useFonts,Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 
-const FunCooking = () => {
+export function FunCooking() {
   const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
@@ -21,8 +21,6 @@ const FunCooking = () => {
   const openDrawer = useCallback(() => {
     navigation.dispatch(DrawerActions.openDrawer());
   },[]);
-  
-
   if (!fontsLoaded) {
     return <AppLoading />;
   }
@@ -73,5 +71,3 @@ const styles = StyleSheet.create({
     }
   });
   
-
-export default FunCooking;

@@ -4,9 +4,10 @@ import AppLoading from 'expo-app-loading';
 
 import colors from '../components/Colors';
 
-import { StyleSheet, Text, TouchableOpacity, View, Image,} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import { useFonts,Comfortaa_400Regular} from '@expo-google-fonts/comfortaa';
 import { NunitoSans_600SemiBold} from '@expo-google-fonts/nunito-sans';
+
 
 import { RootStackParamList } from '../types';
 
@@ -40,7 +41,7 @@ export default function ColectionScreen({
       <Text style={styles.title}>Tu colección</Text>
       </View>
     <SafeAreaView style={styles.containerList}>
-    
+  
       <View>
       <Text style={styles.categoryText}>Producto</Text>
       </View>
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     backgroundColor:colors.variantWhite
   },
   icon: {
-    width: 14,
+    width: 24,
     height: 24
   }
 });

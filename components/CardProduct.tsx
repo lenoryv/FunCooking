@@ -19,7 +19,7 @@ const CardProduct = () => {
     <TouchableOpacity onPress={() => navigation.navigate('Product')}style={styles.container}>
       <FlatList
         data={[{
-          key: 'Robalo',
+          key: 'Lubina',
           cal: '98 kcal',
           img: require('../assets/images/lubina.png')
         },
@@ -28,9 +28,9 @@ const CardProduct = () => {
         <View style={styles.containerItem}>
           <View>
           <Text style={styles.itemTitle}>{item.key}</Text>
-          <Text style={styles.itemSubtitle}>{item.cal}</Text>
           </View>
-          <View>
+          <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+          <Text style={styles.itemSubtitle}>{item.cal}</Text>
           <Image 
         fadeDuration={1000}
         style={styles.img}
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
 
   },
   containerItem: {
-    flexDirection: 'row',
-    width: '45%',
+    flexDirection: 'column',
+    width: 164,
     height: 112,
     backgroundColor: colors.variantWhite,
     padding: 16,
@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
   itemTitle: {
     fontSize: 14,
     fontFamily:'Montserrat_400Regular',
-    textTransform: 'uppercase'
   },
   itemSubtitle: {
     fontSize: 10,
