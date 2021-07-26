@@ -22,6 +22,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.utpl.funcooking",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
