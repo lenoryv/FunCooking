@@ -104,13 +104,6 @@ export function DrawerContent(props:any,{
                     onPress={() => {props.navigation.navigate('NotFound')}}
                 />
             </Drawer.Section>
-            <View style={styles.creator}>
-                <Text style={styles.creatorText}>Whit</Text>
-                <Image style={styles.iconLove}
-                        source={require('../assets/images/love.png')} 
-                        />
-                <Text style={styles.creatorText}>InDevelopment Company</Text>
-            </View>
         </View>
     );
 }

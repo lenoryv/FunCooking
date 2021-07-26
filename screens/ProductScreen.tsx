@@ -4,6 +4,7 @@ import AppLoading from 'expo-app-loading';
 
 import colors from '../components/Colors';
 
+
 import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView} from 'react-native';
 import { useFonts,Comfortaa_400Regular} from '@expo-google-fonts/comfortaa';
 import { NunitoSans_400Regular} from '@expo-google-fonts/nunito-sans';
@@ -12,6 +13,7 @@ import { Montserrat_400Regular, Montserrat_500Medium} from '@expo-google-fonts/m
 
 
 import { RootStackParamList } from '../types';
+import { useEffect, useState } from 'react';
 
 export default function ProductScreen({
   navigation,
@@ -28,6 +30,7 @@ export default function ProductScreen({
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -36,7 +39,7 @@ export default function ProductScreen({
          <Image style={styles.icon}
           source={require('../assets/images/back.png')} />
         </TouchableOpacity>
-        <Text style={styles.title}>Robalo</Text>
+        <Text style={styles.title}>Lubina</Text>
         </View>
         <View>
         <Image style={styles.img}
@@ -60,18 +63,18 @@ export default function ProductScreen({
 
                 <ScrollView style={styles.safeArea}>
                 <Text style={styles.h5}>Datos Generales</Text>
-                <Text style={styles.subtitle}>Nombre Cientifico</Text>
+                <Text style={styles.subtitle}>Nombre Científico</Text>
                 <View style={styles.containerText}>
                 <Text style={styles.body}>Dicentrarchus labrax</Text>
                 </View>
                 <Text style={styles.subtitle}>Valor Nutricional</Text>
                 <View style={styles.containerValues}>
                     <View style={styles.value}>
-                    <Text style={styles.overline}>Calorias</Text>
+                    <Text style={styles.overline}>Calorías</Text>
                     <Text style={styles.caption}>98 Kcal</Text>
                     </View>
                     <View style={styles.value}>
-                    <Text style={styles.overline}>Glúcido</Text>
+                    <Text style={styles.overline}>Glúcidos</Text>
                     <Text style={styles.caption}>0 %</Text>
                     </View>
                     <View style={styles.value}>
@@ -87,11 +90,11 @@ export default function ProductScreen({
                 <View style={styles.containerText}>
                 <Text style={styles.body}>Carnes, pescado y huevos</Text>
                 </View>
-                <Text style={styles.subtitle}>Ubicacion comercial en la ciudad de Loja</Text>
+                <Text style={styles.subtitle}>Ubicación comercial en la ciudad de Loja</Text>
                 <View style={styles.containerText}>
                 <Text style={styles.body}>Supermercados</Text>
                 </View>
-                <Text style={styles.subtitle}>Conservacion</Text>
+                <Text style={styles.subtitle}>Conservación</Text>
                 <View style={styles.containerText}>
                 <Text style={styles.body}>Ninguna</Text>
                 </View>

@@ -1,8 +1,13 @@
 import { StackScreenProps } from '@react-navigation/stack';
+import * as FirebaseCore from 'expo-firebase-core';
 import * as React from 'react';
 import AppLoading from 'expo-app-loading';
 
 import colors from '../components/Colors';
+
+import {useEffect, useState} from 'react';
+
+import firebase from '../database/firebase';
 
 import { StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import { useFonts,Comfortaa_400Regular} from '@expo-google-fonts/comfortaa';
@@ -22,6 +27,7 @@ export default function ColectionScreen({
   navigation,
   
 }: StackScreenProps<RootStackParamList, 'Colection'>) {
+
   let [fontsLoaded] = useFonts({
     NunitoSans_600SemiBold,
     Comfortaa_400Regular,
@@ -31,6 +37,7 @@ export default function ColectionScreen({
   if (!fontsLoaded) {
     return <AppLoading />;
   }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>

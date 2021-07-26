@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import colors from '../components/Colors';
 import AppLoading from 'expo-app-loading';
 import { useFonts,Montserrat_400Regular} from '@expo-google-fonts/montserrat';
 import { FlatList, StyleSheet, Text, View,TouchableOpacity, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import firebase from '../database/firebase';
+
 const CardProduct = () => {
+
+  const [products, setProducts]:any = useState([]);
+
+  useEffect(() => {
+    firebase.db.collection('products').onSnapshot((querySnapshot) => {
+      const products:any = [];
+
+      querySnapshot.docs.forEach((doc) => {
+        const{calory, img, name} = doc.data();
+        products.push({
+          id: doc.id,
+          calory,
+          img,
+          name,
+        });
+      });
+      setProducts(products)
+    });
+  }, []);
+
+  console.log(products)
+
   const navigation = useNavigation();
   let [fontsLoaded] = useFonts({
     Montserrat_400Regular,
@@ -16,29 +40,23 @@ const CardProduct = () => {
   }
 
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Product')}style={styles.container}>
-      <FlatList
-        data={[{
-          key: 'Lubina',
-          cal: '98 kcal',
-          img: require('../assets/images/lubina.png')
-        },
-        ]}
-        renderItem={({item}) => 
+        <FlatList
+        data={products}
+        renderItem={({item}) =>
+        <TouchableOpacity onPress={() => navigation.navigate('Product')}style={styles.container}>
         <View style={styles.containerItem}>
           <View>
-          <Text style={styles.itemTitle}>{item.key}</Text>
+          <Text style={styles.itemTitle}>{item.name}</Text>
           </View>
           <View style={{flexDirection:'row', justifyContent:'space-between'}}>
-          <Text style={styles.itemSubtitle}>{item.cal}</Text>
+          <Text style={styles.itemSubtitle}>{item.calory} kcal</Text>
           <Image 
         fadeDuration={1000}
         style={styles.img}
-          source={item.img} />
+          source={{uri:item.img}} />
           </View>
-        </View>}
+        </View></TouchableOpacity>}
       />
-    </TouchableOpacity>
   );
 }
 

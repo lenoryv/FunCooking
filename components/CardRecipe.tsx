@@ -20,7 +20,7 @@ const CardRecipe = () => {
     <TouchableOpacity onPress={() => navigation.navigate('Recipe')} style={styles.container}>
       <FlatList
         data={[{
-          key: 'Robalo con chips de papa y espárragos',
+          key: 'Róbalo con chips de papa y espárragos',
           cal: '120 min',
           img: require('../assets/images/recipe1.png')
         },
