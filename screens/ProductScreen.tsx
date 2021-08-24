@@ -1,24 +1,22 @@
 import { StackScreenProps } from '@react-navigation/stack';
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
 
 import colors from '../components/Colors';
 
 
-import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, ScrollView, FlatList} from 'react-native';
 import { useFonts,Comfortaa_400Regular} from '@expo-google-fonts/comfortaa';
 import { NunitoSans_400Regular} from '@expo-google-fonts/nunito-sans';
 import { Montserrat_400Regular, Montserrat_500Medium} from '@expo-google-fonts/montserrat';
 
+import firebase from '../database/firebase';
+
+import { useNavigation } from '@react-navigation/native';
 
 
-import { RootStackParamList } from '../types';
-import { useEffect, useState } from 'react';
 
-export default function ProductScreen({
-  navigation,
-  
-}: StackScreenProps<RootStackParamList, 'Product'>) {
+export default function ProductScreen(props:any) {
   let [fontsLoaded] = useFonts({
     NunitoSans_400Regular,
     Comfortaa_400Regular,
@@ -26,6 +24,25 @@ export default function ProductScreen({
     Montserrat_500Medium
 
   });
+  
+  const navigation = useNavigation();
+
+  const [product, setProduct]:any = useState([]);
+
+  useEffect(() => {
+    getProductById(props.route.params.productId);
+  }, []);
+
+
+  const getProductById = async (id:any) => {
+    const dbRef = firebase.db.collection('products').doc(id);
+    const doc = await dbRef.get();
+    const product = doc.data();
+    setProduct({ ...product, id: doc.id });
+  };
+
+  console.log(product)
+  
 
   if (!fontsLoaded) {
     return <AppLoading />;
@@ -35,22 +52,22 @@ export default function ProductScreen({
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.topper}>
-        <TouchableOpacity onPress={() => navigation.replace('Colection')} style={styles.button}>
+        <TouchableOpacity onPress={() => navigation.navigate('Colection')} style={styles.button}>
          <Image style={styles.icon}
           source={require('../assets/images/back.png')} />
         </TouchableOpacity>
-        <Text style={styles.title}>Lubina</Text>
+        <Text style={styles.title}>{product.name}</Text>
         </View>
         <View>
         <Image style={styles.img}
-        source={require('../assets/images/lubina.png')} />
+        source={{uri:product.img}} />
         </View>
       </View>
     <View style={styles.containerWhite}>
         <View style={styles.containerList}>
             <View style={styles.lineStyle}></View>
              <View style={styles.containerButton}>
-             <TouchableOpacity onPress={() => navigation.replace('InfoProduct')} style={styles.buttonCard}>
+             <TouchableOpacity onPress={() => navigation.navigate('InfoProduct')} style={styles.buttonCard}>
          <Image style={styles.icon}
           source={require('../assets/images/addCircle.png')} />
         </TouchableOpacity>
@@ -184,7 +201,7 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     paddingHorizontal: 24,
-    height: 368,
+    height: 280,
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -241,8 +258,8 @@ const styles = StyleSheet.create({
     height: 24,
   },
   img: {
-    width: 240,
-    height: 240
+    width: 200,
+    height: 150
   },
   lineStyle:{
     width: 96,

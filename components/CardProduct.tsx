@@ -24,7 +24,7 @@ const CardProduct = () => {
           name,
         });
       });
-      setProducts(products)
+      setProducts(products);
     });
   }, []);
 
@@ -38,12 +38,11 @@ const CardProduct = () => {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-
-  return (
+    return (
         <FlatList
         data={products}
         renderItem={({item}) =>
-        <TouchableOpacity onPress={() => navigation.navigate('Product')}style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.navigate('Product',{productId: item.id})}style={styles.container}>
         <View style={styles.containerItem}>
           <View>
           <Text style={styles.itemTitle}>{item.name}</Text>
@@ -51,14 +50,14 @@ const CardProduct = () => {
           <View style={{flexDirection:'row', justifyContent:'space-between'}}>
           <Text style={styles.itemSubtitle}>{item.calory} kcal</Text>
           <Image 
-        fadeDuration={1000}
+        fadeDuration={500}
         style={styles.img}
           source={{uri:item.img}} />
           </View>
         </View></TouchableOpacity>}
       />
-  );
-}
+    );
+  }
 
 const styles = StyleSheet.create({
   container: {
@@ -87,8 +86,8 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase'
   },
   img: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 75,
   }
 });
 
